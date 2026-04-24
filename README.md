@@ -21,19 +21,14 @@ Le site est ensuite accessible sur [http://localhost:3000](http://localhost:3000
 
 ## Configuration Plausible
 
-Le tracking Plausible s'active uniquement si la variable `NEXT_PUBLIC_PLAUSIBLE_DOMAIN` est definie.
+Le projet utilise maintenant le snippet de tracking fourni directement par Plausible Cloud.
 
-1. Copier `.env.example` vers `.env.local`
-2. Renseigner le domaine suivi dans `NEXT_PUBLIC_PLAUSIBLE_DOMAIN`
-3. Laisser `NEXT_PUBLIC_PLAUSIBLE_BASE_URL=https://plausible.io` pour Plausible Cloud
-4. Remplacer cette URL par ton domaine Plausible si tu utilises une instance auto-hebergee
+1. Creer le site dans Plausible avec le domaine exact de ton projet Vercel
+2. Laisser le snippet Plausible installe dans `src/components/plausible-analytics.js`
+3. Redeployer le site sur Vercel
+4. Cliquer sur `Verify installation` dans Plausible
 
-Exemple :
-
-```bash
-NEXT_PUBLIC_PLAUSIBLE_DOMAIN=mondomaine.fr
-NEXT_PUBLIC_PLAUSIBLE_BASE_URL=https://plausible.io
-```
+Le script actuellement branche correspond au site Plausible cree pour ce projet. Si Plausible te fournit un nouveau snippet plus tard, il faudra simplement remplacer l'URL du script dans `src/components/plausible-analytics.js`.
 
 ## Ce qui est mesure
 

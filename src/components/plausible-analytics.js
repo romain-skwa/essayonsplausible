@@ -1,23 +1,15 @@
 "use client";
 
 import Script from "next/script";
-import { getPlausibleConfig } from "@/lib/plausible";
 
 export default function PlausibleAnalytics() {
-  const config = getPlausibleConfig();
-
-  if (!config) {
-    return null;
-  }
-
   return (
     <>
       <Script id="plausible-init" strategy="afterInteractive">
-        {`window.plausible = window.plausible || function () { (window.plausible.q = window.plausible.q || []).push(arguments); };`}
+        {`window.plausible = window.plausible || function(){(plausible.q = plausible.q || []).push(arguments)}; plausible.init = plausible.init || function(i){plausible.o = i || {}}; plausible.init();`}
       </Script>
       <Script
-        src={config.scriptSrc}
-        data-domain={config.domain}
+        src="https://plausible.io/js/pa-HZtkoyeEB8V8hoT_GTEo3.js"
         strategy="afterInteractive"
       />
     </>
